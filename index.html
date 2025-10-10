@@ -1,1 +1,278 @@
-<h1> My Portfolio </h1>
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellCulture.ai - Intelligent Optimization for Bioprocessing</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and dark mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enables dark mode based on 'dark' class on <html>
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#10529A', // Primary professional blue, inspired by biotech
+                        'accent-teal': '#00A699', // Bright, scientific accent color
+                        'dark-bg': '#1F2937',     // Dark mode background (gray-800)
+                        'dark-card': '#374151',   // Dark mode card background (gray-700)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for professional aesthetic and responsiveness */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(243, 244, 246, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+        /* Style for the toggle switch track */
+        .toggle-switch-track {
+            transition: all 0.3s ease;
+        }
+        /* Style for the toggle switch thumb */
+        .toggle-switch-thumb {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 transition-colors duration-500 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md dark:bg-dark-bg/90 dark:shadow-lg transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 h-20">
+                <!-- Logo / Domain -->
+                <a href="#" class="text-2xl font-extrabold text-primary-blue dark:text-accent-teal tracking-tight">
+                    <span class="text-accent-teal dark:text-primary-blue">CellCulture</span>.ai
+                </a>
+
+                <!-- Navigation Links (Hidden on small screens) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-sm font-medium hover:text-primary-blue dark:hover:text-accent-teal transition-colors">Platform</a>
+                    <a href="#science" class="text-sm font-medium hover:text-primary-blue dark:hover:text-accent-teal transition-colors">The Science</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-primary-blue dark:hover:text-accent-teal transition-colors">Contact</a>
+                </nav>
+
+                <!-- Theme Toggle Switch (Top Right) -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" aria-label="Toggle dark mode"
+                            class="p-2 rounded-full text-gray-500 hover:text-primary-blue dark:text-gray-400 dark:hover:text-accent-teal focus:outline-none transition-colors duration-300">
+                        <!-- Sun Icon (Light Mode) -->
+                        <svg id="sun-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon Icon (Dark Mode) -->
+                        <svg id="moon-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <!-- Main CTA Button -->
+                    <a href="#" class="hidden sm:inline-block px-4 py-2 text-sm font-semibold rounded-full bg-primary-blue text-white shadow-lg hover:bg-primary-blue/90 dark:bg-accent-teal dark:hover:bg-accent-teal/90 transition-all duration-300">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient section-padding transition-colors duration-500">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="lg:w-3/4 mx-auto">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                        <span class="text-primary-blue dark:text-accent-teal">Intelligent Optimization</span> <br class="hidden sm:inline"> for Cell Culture
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+                        cellculture.ai harnesses advanced machine learning to predict, optimize, and control bioprocessing parameters, ensuring maximum yield and consistency.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#science" class="px-8 py-3 text-lg font-medium rounded-full border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white dark:border-accent-teal dark:text-accent-teal dark:hover:bg-accent-teal dark:hover:text-dark-bg transition-all duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features/Capabilities Section -->
+        <section id="features" class="section-padding bg-white dark:bg-dark-bg transition-colors duration-500">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16 text-primary-blue dark:text-gray-100">Key Platform Capabilities</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                    <!-- Feature 1: Predictive Modeling -->
+                    <div class="bg-gray-50 dark:bg-dark-card p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-500 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-accent-teal/20 text-accent-teal mb-6">
+                            <!-- SVG: Brain/AI -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 5.517A3 3 0 005.122 8.48c.03.615-.157 1.198-.56 1.601A5.98 5.98 0 0110.5 20.25c3.21 0 5.823-2.613 5.823-5.823 0-2.352-1.382-4.385-3.376-5.385 1.994-1.001 3.376-3.033 3.376-5.385a5.975 5.975 0 00-3.377-5.383 3.001 3.001 0 00-4.757 2.964z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-primary-blue dark:text-white">Predictive Growth Modeling</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Forecast culture performance, detect deviations early, and predict optimal harvest windows with 99% accuracy. Reduce batch loss significantly.</p>
+                    </div>
+
+                    <!-- Feature 2: Automated Media Optimization -->
+                    <div class="bg-gray-50 dark:bg-dark-card p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-500 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-blue/20 text-primary-blue mb-6">
+                            <!-- SVG: Beaker/Chemistry -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-1.243a1.5 1.5 0 00-4.015-1.127l-6.223 3.567a1.5 1.5 0 01-1.666 0l-6.22-3.567a1.5 1.5 0 00-4.01 1.127V14.25m10.5-9L12 3m-4.5 4.5L12 3m0 0l4.5 4.5M6 14.25l-2 1.125a.75.75 0 00-.375.65v2.25c0 .324.238.601.55.65l2.25.35c.189.03.38.045.57.045h.5c.19 0 .381-.015.57-.045l2.25-.35a.75.75 0 00.55-.65v-2.25a.75.75 0 00-.375-.65l-2-1.125zM18 14.25l2 1.125a.75.75 0 01.375.65v2.25c0 .324-.238.601-.55.65l-2.25.35c-.189.03-.38.045-.57.045h-.5c-.19 0-.381-.015-.57-.045l-2.25-.35a.75.75 0 01-.55-.65v-2.25c0-.324.238-.601.55-.65l2-1.125z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-primary-blue dark:text-white">Automated Media Optimization</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Dynamically adjust feeding strategies and nutrient concentrations in real-time using our proprietary Bayesian optimization engine.</p>
+                    </div>
+
+                    <!-- Feature 3: Bioreactor Control Integration -->
+                    <div class="bg-gray-50 dark:bg-dark-card p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-500 border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-accent-teal/20 text-accent-teal mb-6">
+                            <!-- SVG: Cog/Settings -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.82 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.82 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.82-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.82-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-primary-blue dark:text-white">Bioreactor Control Integration</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Seamlessly integrate with leading bioreactor systems (Sartorius, Applikon, etc.) for closed-loop, autonomous process control.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Science & Trust Section -->
+        <section id="science" class="section-padding bg-gray-100 dark:bg-gray-800 transition-colors duration-500">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6 text-primary-blue dark:text-accent-teal">The Scientific Edge</h2>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                            Our foundation is built on proprietary models trained on terabytes of high-dimensional omics data and historical batch records. We transform messy, complex data into actionable insights for cell line development and manufacturing.
+                        </p>
+                        <ul class="space-y-4 text-gray-700 dark:text-gray-400">
+                            <li class="flex items-start">
+                                <!-- SVG: Checkmark -->
+                                <svg class="h-6 w-6 text-accent-teal mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>**Hybrid Modeling:** Combining physics-based and deep learning models for robust, interpretable predictions.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <!-- SVG: Checkmark -->
+                                <svg class="h-6 w-6 text-accent-teal mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>**Process Comparability:** Automatically assess and ensure consistency across sites and scales using digital twin technology.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <!-- SVG: Checkmark -->
+                                <svg class="h-6 w-6 text-accent-teal mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>**Data Security:** SOC 2 compliant architecture ensuring your proprietary data remains safe and segmented.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-10 lg:mt-0 p-8 bg-white dark:bg-dark-card rounded-xl shadow-2xl">
+                        <!-- Responsive Video Embed for Bioprocess Visualization -->
+                        <div class="relative pt-[56.25%] h-0 overflow-hidden rounded-lg shadow-xl">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                    src="https://www.youtube.com/embed/z-gD1zL54o4"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    title="AI Data Visualization Placeholder">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA/Contact Section -->
+        <section id="contact" class="bg-primary-blue dark:bg-gray-900 transition-colors duration-500 py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-4">Subcribe to get updates and revolutionize your cell culture workflows</h2>
+                <a href="#" class="px-10 py-4 text-xl font-bold rounded-full bg-accent-teal text-white shadow-2xl transform hover:scale-105 hover:bg-accent-teal/90 transition-all duration-300">
+                    Subcribe now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-10 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2025 cellculture.ai. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-sm hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Theme Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const toggleButton = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            // 1. Initial Load: Check localStorage for theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                html.classList.add('light');
+                html.classList.remove('dark');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+
+            // 2. Toggle Functionality
+            toggleButton.addEventListener('click', () => {
+                if (html.classList.contains('light')) {
+                    // Switch to Dark Mode
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                } else {
+                    // Switch to Light Mode
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
