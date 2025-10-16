@@ -12,31 +12,71 @@
 
     <style>
         body { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; padding-top: 20px; padding-bottom: 20px; background-color: #f7f7f7; color: #333; }
-      .resume { margin-top: 30px; border: 1px solid #ddd; border-radius: 6px; background-color: #fff; padding: 30px; }
-      .resume-header { margin-bottom: 30px; border-bottom: 2px solid #5cb85c; padding-bottom: 15px; }
+     .resume { margin-top: 30px; border: 1px solid #ddd; border-radius: 6px; background-color: #fff; padding: 30px; position: relative; } /* Added position: relative for toggle positioning */
+     .resume-header { margin-bottom: 30px; border-bottom: 2px solid #5cb85c; padding-bottom: 15px; }
         h1, h2, h3, h4, h5, h6 { color: #2c3e50; font-weight: 600; }
         h1 { font-size: 2.5em; margin-bottom: 0; }
-      .tagline { color: #7f8c8d; font-size: 1.2em; margin-top: 5px; margin-bottom: 20px; }
-      .contact-details li { list-style: none; margin-bottom: 8px; }
-      .section-title { color: #5cb85c; font-size: 1.5em; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px solid #eee; }
-      .work-item { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px dotted #ccc; }
-      .work-item:last-child { border-bottom: none; }
-      .work-title { margin-bottom: 5px; font-weight: 600; color: #34495e; }
-      .dates { float: right; color: #95a5a6; font-style: italic; font-size: 0.9em; }
-      .highlights li { margin-bottom: 5px; }
-      .skill-group { margin-bottom: 20px; }
-      .skill-group h5 { margin-bottom: 8px; font-size: 1.1em; }
+     .tagline { color: #7f8c8d; font-size: 1.2em; margin-top: 5px; margin-bottom: 20px; }
+     .contact-details li { list-style: none; margin-bottom: 8px; }
+     .section-title { color: #5cb85c; font-size: 1.5em; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px solid #eee; }
+     .work-item { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px dotted #ccc; }
+     .work-item:last-child { border-bottom: none; }
+     .work-title { margin-bottom: 5px; font-weight: 600; color: #34495e; }
+     .dates { float: right; color: #95a5a6; font-style: italic; font-size: 0.9em; }
+     .highlights li { margin-bottom: 5px; }
+     .skill-group { margin-bottom: 20px; }
+     .skill-group h5 { margin-bottom: 8px; font-size: 1.1em; }
+
+        /* DARK MODE STYLES */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+       .resume.dark-mode {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+       .resume.dark-mode h1,.resume.dark-mode h2,.resume.dark-mode h3,.resume.dark-mode h4,.resume.dark-mode h5,.resume.dark-mode h6 {
+            color: #bb86fc; /* Light purple for accents */
+        }
+       .resume.dark-mode.section-title {
+            color: #03dac6; /* Teal accent for titles */
+            border-bottom-color: #333;
+        }
+       .resume.dark-mode.tagline,.resume.dark-mode.text-muted {
+            color: #a0a0a0!important;
+        }
+       .resume.dark-mode a {
+            color: #bb86fc;
+        }
+       .resume.dark-mode.dates {
+            color: #a0a0a0!important;
+        }
+       .resume.dark-mode.work-item {
+            border-bottom-color: #333;
+        }
+        /* Toggle button styling */
+       .resume.dark-mode #mode-toggle {
+            background-color: #333!important;
+            color: #e0e0e0!important;
+            border-color: #444!important;
+        }
+
         /* Media query for print optimization */
         @media print {
             body { padding: 0; margin: 0; background: #fff; }
-          .resume { margin-top: 0; border: none; padding: 0; }
-          .dates { color: #444!important; }
-          .work-item { page-break-inside: avoid; }
+         .resume { margin-top: 0; border: none; padding: 0; }
+         .dates { color: #444!important; }
+         .work-item { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
     <div class="container resume">
+        
+        <button id="mode-toggle" class="btn btn-sm btn-light" style="position: absolute; top: 30px; right: 30px; z-index: 10;">
+            <i class="fas fa-moon"></i>
+        </button>
         
         <div class="resume-header">
             <h1 class="text-left">Leo Larrahondo</h1>
@@ -194,5 +234,49 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        const resumeContainer = document.querySelector('.resume');
+        const body = document.body;
+        const icon = toggleButton.querySelector('i');
+        const RESUME_MODE_KEY = 'resumeMode';
+
+        // 1. Function to apply the theme
+        function applyTheme(mode) {
+            if (mode === 'dark') {
+                body.classList.add('dark-mode');
+                resumeContainer.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                resumeContainer.classList.remove('dark-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+            // Save the current preference to local storage
+            localStorage.setItem(RESUME_MODE_KEY, mode);
+        }
+
+        // 2. Load preferred theme on startup (defaulting to system preference)
+        const storedMode = localStorage.getItem(RESUME_MODE_KEY);
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (storedMode) {
+            applyTheme(storedMode);
+        } else if (systemPrefersDark) {
+             applyTheme('dark');
+        } else {
+             applyTheme('light');
+        }
+
+        // 3. Add event listener for the toggle button
+        toggleButton.addEventListener('click', () => {
+            const currentMode = body.classList.contains('dark-mode')? 'dark' : 'light';
+            const newMode = (currentMode === 'light')? 'dark' : 'light';
+            applyTheme(newMode);
+        });
+    </script>
 </body>
 </html>
