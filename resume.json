@@ -2,9 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Leo Larrahondo",
-    "label": "Sr Director/VP, Manufacturing + Operations",
-    "email": "llarrahondo@gmail.com",
-    "phone": "(954) 649-3945",
+    "label": "Biotech Executive, Manufacturing + Operations",
+    "email": "##########@######.com",
+    "phone": "(XXXX) XXX-XXXX",
     "summary": "Results-driven Senior Director / VP of Manufacturing & Operations with 20+ years of experience transforming complex operations in highly regulated environments (cGMP, FDA, USDA). Proven leader in scaling manufacturing, optimizing processes, building high-performing teams, and consistently delivering product \"right first time\". I believe that the pillars of operational excellence, which include **people**, **safety**, **quality**, **adherence**, **delivery** and **continuous improvement**, are the bedrock of any successful organization. I have strived to be an accomplished leader skilled at building systems and processes driven by continuous improvement as a framework to support short and long-term organizational goals.",
     "profiles": [
       {
@@ -19,49 +19,56 @@
     {
       "name": "Mission Barns",
       "location": "San Francisco, CA",
+      "position": "SR. DIRECTOR / VP, MANUFACTURING and OPERATIONS",
+      "startDate": "2022-02",
+      "endDate": "2025-07",
+      "highlights":
+    },{
+      "name": "Mission Barns",
+      "location": "San Francisco, CA",
       "position": "SR. DIRECTOR, MANUFACTURING",
-      "startDate": "2022-02-01",
-      "endDate": "2024-01-31",
+      "startDate": "2022-02",
+      "endDate": "2024-01",
       "highlights":
     },
     {
       "name": "Thermo Fisher Scientific",
       "location": "Miami, FL",
       "position": "SR. MANAGER, ENGINEERING AND FACILITIES",
-      "startDate": "2021-07-01",
-      "endDate": "2022-01-31",
+      "startDate": "2021-07",
+      "endDate": "2022-01",
       "highlights":
     },
     {
       "name": "Thermo Fisher Scientific",
       "location": "Miami, FL",
       "position": "SR. MANAGER, OPERATIONS/SITE LEADER",
-      "startDate": "2018-10-01",
-      "endDate": "2021-06-30",
+      "startDate": "2018-10",
+      "endDate": "2021-06",
       "highlights":
     },
     {
       "name": "Becton Dickinson and Company (BD)",
       "location": "Miami, FL",
       "position": "SUPERVISOR, OPERATIONS → SR MANAGER, OPERATIONS/SITE LEADER",
-      "startDate": "2015-02-01",
-      "endDate": "2018-09-30",
+      "startDate": "2015-02",
+      "endDate": "2018-09",
       "highlights":
     },
     {
       "name": "Becton Dickinson and Company (BD)",
       "location": "Miami, FL",
       "position": "MANUFACTURING SUPERVISOR/PROCESS & CONTINUOUS IMPROVEMENT ENGINEER/VALIDATION ENGINEER",
-      "startDate": "2009-07-01",
-      "endDate": "2015-01-31",
+      "startDate": "2009-07",
+      "endDate": "2015-01",
       "highlights":
     },
     {
       "name": "Goodwin Biotechnology (gbi)",
       "location": "Fort Lauderdale, FL",
       "position": "SR. SUPERVISOR, MANUFACTURING",
-      "startDate": "2000-09-01",
-      "endDate": "2009-03-31",
+      "startDate": "2000-09",
+      "endDate": "2009-03",
       "highlights":
     }
   ],
